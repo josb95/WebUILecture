@@ -1,0 +1,24 @@
+==선택자
+전체 선택자
+Tag 선택자
+id 선택자
+class 선택자
+속성 선택자
+후손 선택자
+자손 선택자
+반응 선택자
+구조 선택자
+
+
+
+
+==속성
+color
+background
+width
+height
+padding
+margin
+font-family
+overflow
+float
