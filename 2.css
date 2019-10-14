@@ -26,3 +26,15 @@ img[src$=gif] {
 #header h1 {
   color: red;
 }
+
+#section h1 {
+  color: orange;
+}
+
+#header2 > h1 {
+  color: red;
+}
+
+#section2 > h1 {
+  color: orange;
+}
