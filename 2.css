@@ -3,6 +3,8 @@
   color: black;
   text-align: center;
 }
+.action:hover {color: blue;}
+.action:active {color: yellow;}
 
 input[type=text] {
   background: red;
