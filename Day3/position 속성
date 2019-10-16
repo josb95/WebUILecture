@@ -29,3 +29,19 @@ web page Layout 구성
 -float
 --left
 --right
+
+
+
+
+Web Page
+
+
+Header
+Navigation
+Content(주/부)
+Footer
+
+공간분할 주로 div 사용
+=> 의미하는 바가 표현되지 않음
+
+=> HTML5 Semantic tag 사용(Layout 의미부여)
