@@ -1,0 +1,15 @@
+.box {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+
+.red {
+  background: red;
+}
+.green {
+  background: green;
+}
+.blue {
+  background: blue;
+}
