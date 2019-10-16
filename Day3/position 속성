@@ -11,3 +11,10 @@ position 속성 HTML tag 위치 설정
 -fixed : 화면의 절대 좌표로 위치 설정
 
 top bottom left right
+
+
+자손이 absolute 일 때
+1. absolute의 부모쪽에 height 값을 주기
+2. absolute의 부모쪽에 position : relative; 설정
+3. absolute의 부모쪽에 overflow: hidden; 설정 => 부모영역 내에서만 표시
+4. 부모영역 크기를 늘릴 수가 없으면서 모두를 보여주고 싶을 때 => scroll 설정
