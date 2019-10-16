@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>HTML Page Layout</title>
     <style>
-      /*초기화*/
+      /* 초기화 */
       * {
         margin: 0;
         padding: 0;
@@ -27,11 +27,60 @@
         border: 0;
       }
 
+      /* Header */
+      #main_header {
+        width: 960px;
+        margin: 0 auto;
+        height: 160px;
+        position: relative;
+      }
+
+      #main_header>#title {
+        position: absolute;
+        left: 20px;
+        top: 30px;
+      }
+
+      #main_header>#main_gnb {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+
+      #main_header>#main_lnb {
+        position: absolute;
+        right: 0;
+        bottom: 10px;
+      }
+
     </style>
   </head>
 
   <body>
-
+    <header id="main_header">
+      <div id="title">
+        <h1>Web Application</h1>
+        <h2>HTML5 / CSS3 Basic</h2>
+      </div>
+      <nav id="main_gnb">
+        <ul>
+          <li><a href="#">Web</a></li>
+          <li><a href="#">Mobile</a></li>
+          <li><a href="#">Game</a></li>
+          <li><a href="#">Simulation</a></li>
+          <li><a href="#">Data</a></li>
+        </ul>
+      </nav>
+      <nav id="main_lnb">
+        <ul>
+          <li><a href="#">HTML5</a></li>
+          <li><a href="#">CSS3</a></li>
+          <li><a href="#">JavaScript</a></li>
+          <li><a href="#">jQuery</a></li>
+          <li><a href="#">Node.js</a></li>
+        </ul>
+      </nav>
+    </header>
   </body>
 
 </html>
