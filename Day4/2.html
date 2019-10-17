@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>HTML5 canvas</title>
+    <style>
+      body {
+        width: 960px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        color: blue;
+        text-align: center;
+      }
+
+      #canvas {
+        margin-top: 50px;
+        border: solid 1px black;
+      }
+
+    </style>
+    <script>
+      function draw() {
+        var canvas = document.getElementById('canvas');
+        if (canvas.getContext) {
+          var ctx = canvas.getContext('2d');
+          ctx.fillStyle = "rgb(200,0,0)";
+          ctx.fillRect(10, 10, 50, 50);
+
+          ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+          ctx.fillRect(30, 30, 50, 50);
+        }
+      }
+
+    </script>
+  </head>
+
+  <body onload="draw()">
+    <h1>HTML5 Canvas</h1>
+    <hr>
+    <canvas id="canvas" width="400px" height="400px"></canvas>
+  </body>
+
+</html>
