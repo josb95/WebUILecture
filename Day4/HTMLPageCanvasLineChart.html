@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <style>
+      #data {
+        margin-bottom: 20px;
+      }
+
+      #data ul {
+        padding: 0;
+        margin: 0;
+        clear: both;
+        list-style: none;
+      }
+
+      #data ul li {
+        float: left;
+        width: 80px;
+        height: 30px;
+        text-align: center;
+        border-bottom: 1px solid #888;
+        line-height: 30px;
+      }
+
+      #data ul.data-header li {
+        background-color: #ddd;
+        border-top: 1px solid #888;
+      }
+
+      #canvasbox {
+        width: 540px;
+        height: 200px;
+        padding: 10px;
+        border: 1px solid #000;
+        margin-top: 50px;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <h1>월별 점수 통계</h1>
+    <div id="data">
+      <ul class="data-header">
+        <li>이름</li>
+        <li>7월</li>
+        <li>8월</li>
+        <li>9월</li>
+        <li>10월</li>
+        <li>11월</li>
+        <li>12월</li>
+      </ul>
+      <ul class="data-row" data-no="1" data-color="#0000ff">
+        <li class="data-name">홍길동</li>
+        <li class="data-month">50</li>
+        <li class="data-month">90</li>
+        <li class="data-month">65</li>
+        <li class="data-month">45</li>
+        <li class="data-month">0</li>
+        <li class="data-month">77</li>
+      </ul>
+      <ul class="data-row" data-no="2" data-color="#ff0000">
+        <li class="data-name">김개똥</li>
+        <li class="data-month">66</li>
+        <li class="data-month">96</li>
+        <li class="data-month">57</li>
+        <li class="data-month">20</li>
+        <li class="data-month">68</li>
+        <li class="data-month">89</li>
+      </ul>
+      <ul class="data-row" data-no="3" data-color="#00ff00">
+        <li class="data-name">박철수</li>
+        <li class="data-month">88</li>
+        <li class="data-month">54</li>
+        <li class="data-month">70</li>
+        <li class="data-month">90</li>
+        <li class="data-month">50</li>
+        <li class="data-month">63</li>
+      </ul>
+    </div>
+    <div id="canvasbox"><canvas id="mycanvas" width="540" height="200"></canvas></div>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+      var canvas = document.getElementById("mycanvas");
+      var canvasWidth = canvas.width;
+      var canvasHeight = canvas.height - 20;
+      var valueLimit = 100;
+      var ctx = canvas.getContext("2d");
+
+      function chart(dataNo) {
+        if (!dataNo) dataNo = 0;
+        var rows = $("#data .data-row");
+        ctx.clearRect(0, 0, canvasWidth, canvasHeight + 20);
+        if (rows.length && canvas.getContext) {
+          var textArray = new Array();
+          for (var i = 0; i < rows.length; i++) {
+            textArray[i] = new Array();
+            var x = 0;
+            var dataName = $(rows[i]).children("li.data-name").html();
+            var lineColor = $(rows[i]).attr("data-color");
+            var rowNo = parseInt($(rows[i]).attr("data-no"));
+            if (dataNo != 0 && dataNo === rowNo) {
+              var lineWidth = 5;
+              var fontstyle = "bold 15px Gullim";
+            } else {
+              var fontstyle = "12px Gullim";
+              var lineWidth = 1;
+            }
+            ctx.font = fontstyle;
+            ctx.textBaseline = 'middle';
+            ctx.beginPath();
+            ctx.strokeStyle = lineColor;
+            ctx.lineWidth = lineWidth;
+            var monthData = $(rows[i]).children("li.data-month");
+            var xWidth = parseInt(canvasWidth / monthData.length);
+            for (var j = 0; j < monthData.length; j++) {
+              x = x + xWidth;
+              var tmpData = parseInt($(monthData[j]).html());
+              var y = (canvasHeight - parseInt((tmpData * canvasHeight) / valueLimit)) + 10;
+              if (j == 0) {
+                ctx.fillText(dataName, 0, y);
+                ctx.moveTo(x, y);
+              } else {
+                ctx.lineTo(x, y);
+                ctx.stroke();
+              }
+              if (j == (monthData.length - 1)) var textX = x - 15;
+              else var textX = x - (ctx.measureText(tmpData).width / 2);
+              textArray[i][j] = new Array(tmpData, textX, y, fontstyle);
+            }
+          }
+          if (textArray.length) {
+            for (k = 0; k < textArray.length; k++) {
+              for (l = 0; l < textArray[k].length; l++) {
+                ctx.font = textArray[k][l][3];
+                ctx.fillText(textArray[k][l][0], textArray[k][l][1], textArray[k][l][2]);
+              }
+            }
+          }
+        }
+      }
+      $(".data-row").hover(
+        function() {
+          $(this).children("li").css("background-color", "#ff0");
+          var dataNo = parseInt($(this).attr("data-no"));
+          chart(dataNo);
+        },
+        function() {
+          $(this).children("li").css("background-color", "#fff");
+          chart(0);
+        }
+      );
+      chart(0);
+
+    </script>
+    </div>
+  </body>
+
+</html>
