@@ -8,3 +8,13 @@ https://getbootstrap.com
 - CSS / JavaScript Code 미리 작성
 	1. Download
 	2. CDN(Content Delivery Network)
+	
+	
+Canvas
+HTML5, 일부 브라우저 미지원
+
+BOM object : Window(Web Browser) 제어
+Browser Object Model
+
+DOM object : Document(HTML로 구성한 내용)
+Document Object Model
