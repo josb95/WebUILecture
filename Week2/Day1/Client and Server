@@ -64,3 +64,8 @@ Jinja Library의 render.template
 CGI 처리 방식
 1. 별도의 file을 이용한 Response - JSP, ASP
 2. 기존 HTML에 부분적으로 연동한 Response 방식 PHP, Python Flask
+
+
+HTTP Header Data GET -> Web Browser 주소창
+
+HTTP Body Data POST
