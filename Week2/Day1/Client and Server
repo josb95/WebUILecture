@@ -24,3 +24,23 @@ Web Framework
 - Full Stack Framework => Java -Spring Python -Django
 	CGI에 필요한 모든것을 다 갖춤
 - Micro Framework => Python -Flask
+	최소한의 구조로만 구성되어있는 Framework
+	
+
+##Python Flask##
+Web App [dir] (files)
+	- [templates]
+	
+	- (python files)
+	
+	
+	
+URI(Uniform Resource Identifier)
+content://Scheme/Authority/path/data
+        <--URL-->         /
+ㄴ>Protocol
+
+URL(Uniform Resource Locator)
+https://www.naver.com (Domain name)
+	
+	
