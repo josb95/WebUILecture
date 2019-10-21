@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Flask HTML Test</title>
+    <style>
+      body {
+        width: 960px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        color: blue;
+        text-align: center;
+      }
+
+      #main>h3 {
+        color: red;
+        text-align: center;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <h1>Flask render_template test</h1>
+    <hr>
+    <div id="main">
+      {% if data >= 30 %}
+      <h3>Greater than 30</h3>
+      {% elif data > 25 %}
+      <h3>Greater than 25</h3>
+      {% else %}
+      <h3>{{data}}</h3>
+      {% endif %}
+    </div>
+  </body>
+
+</html>

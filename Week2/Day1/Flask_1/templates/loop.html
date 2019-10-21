@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Flask HTML Test</title>
+    <style>
+      body {
+        width: 960px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        color: blue;
+        text-align: center;
+      }
+
+      #main>h3 {
+        color: red;
+        text-align: center;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <h1>Flask render_template test</h1>
+    <hr>
+    <div id="main">
+      <ul>
+        {% for value in values %}
+        <li>{{value}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </body>
+
+</html>
