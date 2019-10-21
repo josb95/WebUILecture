@@ -17,5 +17,3 @@ if __name__ == "__main__":
     with app.test_request_context():
         print(url_for('hello'))
         print(url_for('get_profile', username = 'flash'))
-    # app.run( host = host_addr, port = port_num)
-    # app.run( host = host_addr )

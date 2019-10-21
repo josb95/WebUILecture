@@ -43,4 +43,18 @@ content://Scheme/Authority/path/data
 URL(Uniform Resource Locator)
 https://www.naver.com (Domain name)
 	
-	
+REST(Representational State Transfer)
+RESTful	
+=> Resource에 접근하는 통일된 방식을 제공하는 Service
+=> API(Application Programming Interface)형식
+
+자원 접근 동작 [CRUD]
+{
+Create : POST
+Retrive : GET
+Update : PUT
+Delete : DELETE
+}
+
+Request 시 Data 전달방식
+GET(HTTP헤더에 데이터를 포함하는 방식-주소창에 데이터가 표시됨)/POST(Body에 저장, 크기 제한 x)/PUT/DELETE
