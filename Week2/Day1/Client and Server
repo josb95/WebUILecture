@@ -58,3 +58,9 @@ Delete : DELETE
 
 Request 시 Data 전달방식
 GET(HTTP헤더에 데이터를 포함하는 방식-주소창에 데이터가 표시됨)/POST(Body에 저장, 크기 제한 x)/PUT/DELETE
+
+Jinja Library의 render.template
+
+CGI 처리 방식
+1. 별도의 file을 이용한 Response - JSP, ASP
+2. 기존 HTML에 부분적으로 연동한 Response 방식 PHP, Python Flask
