@@ -1,17 +1,26 @@
-Web Client						Web Server
-				-Request->
-				(((Http)))
-				<-Response-
+Web Client						Web Server							DB
+				-Request->						-저장/수정/삭제->
+				(((Http)))						((CGI 처리))
+				<-Response-						<----검색----
 Web Browser						Web Server
 Program							Program
-
--HTML
-
--CSS
-
--JavaScript
+{
+- HTML
+- CSS
+- JavaScript
+}
+: 사용자와의 상호작용
 
 
 Web Service
 
 1세대 : static HTML
+2세대 : Client - Server 간의 통신(data 교환) - CGI(Common Gateway Interface)
+3세대 : MVC 구조 -> Web Framework(Java -Spring Python -Django -Flask)
+4세대 : open API / REST API
+
+
+Web Framework
+- Full Stack Framework => Java -Spring Python -Django
+	CGI에 필요한 모든것을 다 갖춤
+- Micro Framework => Python -Flask
