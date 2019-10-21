@@ -1,0 +1,17 @@
+Web Client						Web Server
+				-Request->
+				(((Http)))
+				<-Response-
+Web Browser						Web Server
+Program							Program
+
+-HTML
+
+-CSS
+
+-JavaScript
+
+
+Web Service
+
+1세대 : static HTML
