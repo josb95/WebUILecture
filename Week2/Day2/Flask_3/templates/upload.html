@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Flask Template Example</title>
+    <style>
+      body {
+        width: 960px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        color: blue;
+        text-align: center;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <h1>Flask Template upload test HTML</h1>
+    <hr>
+    <form class="" action="http://localhost:8080/fileUpload" method="post" enctype="multipart/form-data">
+      <input type="file" name="file" placeholder="Input upload filename">
+      <input type="submit" name="" value="업로드">
+    </form>
+  </body>
+
+</html>
