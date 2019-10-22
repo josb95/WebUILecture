@@ -1,0 +1,43 @@
+body {
+  margin : 0;
+  padding : 0;
+  color : white;
+  font-family: 'Times New Roman', Arial;
+}
+
+.header {
+  background: url('coding.png');
+  height: 450px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.h-1 {
+  max-width: 1000px;
+  margin : 4 auto;
+  padding : 20px 0;
+}
+
+.h-1 h1 {
+  font-size : 44px;
+  color : #D30C0C;
+}
+
+.h-1 p {
+  font-weight : bold;
+  font-size : 60px;
+  color : rgb(79, 19 , 219);
+}
+
+.h-1 a{
+  text-decoration : none;
+  color : #FF0000;
+  background : #8BC34A;
+  font-size: 30px;
+  padding: 4px 20px;
+  border-radius: 30px;
+  margin: 10px;
+}
+
+.h-1 a:hover { color: yellow;}
+.h-1 a:active {color : orange;}
