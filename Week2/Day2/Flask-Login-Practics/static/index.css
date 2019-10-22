@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: calibri;
+}
+
+.header {
+    background: url(coding-825x500.jpg);
+    height: 450px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.h-1 {
+    max-width: 1000px;
+    margin: 4 auto;
+    padding: 20px 0;
+}
+
+.h-1 h1 {
+    font-size: 44px;
+    color: #00ffb8;
+}
+
+.h-1 p {
+    font-weight: bold;
+    font-size: 60px;
+    color: #FFFF00;
+}
+
+.h-1 a {
+    text-decoration: none;
+    color: #FF0000;
+    background: #8BC34A;
+    font-size: 30px;
+    padding: 4px 20px;
+    border-radius: 30px;
+    margin: 10px;
+}
