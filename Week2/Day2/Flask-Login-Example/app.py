@@ -6,7 +6,7 @@ from instagram import getfollowedby, getname
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db' # DB 경로
 db = SQLAlchemy(app)
 
 
@@ -73,4 +73,3 @@ if __name__ == '__main__':
 	db.create_all()
 	app.secret_key = "123"
 	app.run(host='0.0.0.0')
-	
