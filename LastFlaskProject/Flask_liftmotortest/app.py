@@ -3,8 +3,8 @@ import RPi.GPIO as g
 import time
 
 g.setmode(g.BCM)
-# g.setup(18, g.OUT)
-# pwm = g.PWM(18, 1000)
+g.setup(18, g.OUT)
+pwm = g.PWM(18, 1000)
 
 app = Flask(__name__)
 
