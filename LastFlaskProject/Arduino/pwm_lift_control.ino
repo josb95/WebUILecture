@@ -29,88 +29,18 @@ void loop() {
   int input_right1 = analogRead(A4);
   int input_right2 = analogRead(A5);
 
-  if (analogRead(A0) == 1){
-   for(int i = 0; i < val; i = i + 2){
-     Serial.print(val);
-     analogWrite(output_lift1, i);
-   }
-   while(analogRead(A0) == 1){}
-   for(int i = val; i <= 0; i = i - 2){
-     analogWrite(output_lift1, i);
-   }
-  }
-  else {
-   digitalWrite(output_lift1, LOW);
-  }
+  Serial.println(input_lift1);
+  Serial.println(input_lift2);
+  Serial.println(input_left1);
+  Serial.println(input_left2);
+  Serial.println(input_right1);
+  Serial.println(input_right2);
 
-  if (analogRead(A1) == 1)){
-   for(int i = 0; i < val; i = i + 2){
-     Serial.print(val);
-     analogWrite(output_lift2, i);
-   }
-   while(analogRead(A1) == 1)){}
-   for(int i = val; i <= 0; i = i - 2){
-     analogWrite(output_lift2, i);
-   }
-  }
-  else {
-   digitalWrite(output_lift2, LOW);
-  }
-
-  if (analogRead(A2) == 1)){
-   for(int i = 0; i < val; i = i + 2){
-     Serial.print(val);
-     analogWrite(output_left1, i);
-   }
-   while(analogRead(A2) == 1)){}
-   for(int i = val; i <= 0; i = i - 2){
-     analogWrite(output_left1, i);
-   }
-  }
-  else {
-   digitalWrite(output_left1, LOW);
-  }
-
-  if (analogRead(A3) == 1)){
-   for(int i = 0; i < val; i = i + 2){
-     Serial.print(val);
-     analogWrite(output_left2, i);
-   }
-   while(analogRead(A3) == 1)){}
-   for(int i = val; i <= 0; i = i - 2){
-     analogWrite(output_left2, i);
-   }
-  }
-  else {
-   digitalWrite(output_left2, LOW);
-  }
-
-  if (analogRead(A4) == 1)){
-   for(int i = 0; i < val; i = i + 2){
-     Serial.print(val);
-     analogWrite(output_right1, i);
-   }
-   while(analogRead(A4) == 1)){}
-   for(int i = val; i <= 0; i = i - 2){
-     analogWrite(output_right1, i);
-   }
-  }
-  else {
-   digitalWrite(output_right1, LOW);
-  }
-
-  if (analogRead(A5) == 1)){
-   for(int i = 0; i < val; i = i + 2){
-     Serial.print(val);
-     analogWrite(output_right2, i);
-   }
-   while(analogRead(A5) == 1)){}
-   for(int i = val; i <= 0; i = i - 2){
-     analogWrite(output_right2, i);
-   }
-  }
-  else {
-   digitalWrite(output_right2, LOW);
-  }
+  //blank
+  
+  /*
+  전체를 if와 else if문으로 모든 조건 걸어주는 하드 코딩
+  or status 변수를 이용한 코딩
+  */
 
 }
