@@ -1,15 +1,32 @@
 class Lift:
-    def __init__(self, av, x, y, d, nx, ny):
-        self.available = av
-        self.x = x
+    def __init__(self, y):
+        self.available = True
+        self.x = 0
         self.y = y
-        self.dir = d
+        self.lift = 0
+        self.ps = "Empty"
+        self.dir = "E"
 
-        self.next_x = nx
-        self.next_y = ny
-        self.final_x = fx
-        self.final_y = fy
-        
+    def move_North(self):
+        self.y = self.y + 1
+
+    def move_South(self):
+        self.y = self.y - 1
+
+    def move_East(self):
+        self.x = self.x + 1
+
+    def move_West(self):
+        self.x = self.x - 1
+
+    def lift_Up(self):
+        if (self.lift == 2){
+        break;
+        }
+        self.lift = self.lift + 1
+
+
+
     def start(self):
         pass
     def stop(self):
