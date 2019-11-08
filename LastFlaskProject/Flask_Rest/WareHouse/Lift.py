@@ -19,17 +19,47 @@ class Lift:
     def move_West(self):
         self.x = self.x - 1
 
+    def move_Forward(self):
+        if self.dir == 'N':
+            move_North()
+        elif self.dir == 'W':
+            move_West()
+        elif self.dir == 'S':
+            move_South()
+        elif self.dir == 'E':
+            move_East()
+
+    def move_Backward(self):
+        if self.dir == 'N':
+            move_South()
+        elif self.dir == 'W':
+            move_East()
+        elif self.dir == 'S':
+            move_North()
+        elif self.dir == 'E':
+            move_West()
+
+    def turn_Left(self):
+        if self.dir == 'N':
+            self.dir = 'W'
+        elif self.dir == 'W':
+            self.dir = 'S'
+        elif self.dir == 'S':
+            self.dir = 'E'
+        elif self.dir == 'E':
+            self.dir = 'N'
+
+    def turn_Right(self):
+        if self.dir == 'N':
+            self.dir = 'E'
+        elif self.dir == 'E':
+            self.dir = 'S'
+        elif self.dir == 'S':
+            self.dir = 'W'
+        elif self.dir == 'W':
+            self.dir = 'N'
+
     def lift_Up(self):
-        if (self.lift == 2){
-        break;
-        }
+        if (self.lift == 2):
+            break;
         self.lift = self.lift + 1
-
-
-
-    def start(self):
-        pass
-    def stop(self):
-        pass
-    def pause(self):
-        pass
