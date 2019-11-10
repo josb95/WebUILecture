@@ -12,13 +12,18 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/motor')
+
+@app.route('/')
+def admin():
+    return render_template('admin.html')
+
+@app.route('/test1')
 def motor_control():
     house = WS.Storage(5,5)
     print(house)
     return render_template('index.html')
 
-@app.route('/camera')
+@app.route('/test2')
 def camera_control():
     return render_template('index.html')
 

@@ -61,10 +61,10 @@ class Lift:
 
     def lift_Up(self):
         if self.lift == 2:
-            break
+            return
         self.lift = self.lift + 1
 
     def lift_Down(self):
         if self.lift == 0:
-            break
+            return
         self.lift = self.lift - 1

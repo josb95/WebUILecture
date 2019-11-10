@@ -1,7 +1,8 @@
 max = 2
 
 class Rack :
-    def __init__(self ,stuff , quantity, x, y):
+    def __init__(self ,name ,stuff, quantity, x, y):
+        self.name = name
         self.stuff = stuff
         self.quantity = quantity
         self.x = x
