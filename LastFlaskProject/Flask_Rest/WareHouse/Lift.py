@@ -60,6 +60,11 @@ class Lift:
             self.dir = 'N'
 
     def lift_Up(self):
-        if (self.lift == 2):
-            break;
+        if self.lift == 2:
+            break
         self.lift = self.lift + 1
+
+    def lift_Down(self):
+        if self.lift == 0:
+            break
+        self.lift = self.lift - 1
