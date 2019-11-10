@@ -44,7 +44,7 @@ class Storage:
         # 불량
         pass
     
-    def calculate_Route(self):
+    def calculate_Route(self):      
         # 경로계산
         pass
     
@@ -66,10 +66,15 @@ class Storage:
         print(self.map)
 
 
+#
+
+#
+
+
 # test part start
 s = Storage(9,5)
 s.add_Lift('lift1', 0)
 print(s.lift1.x)
 print(s.lift1.y)
-print(s.lift1.available)
+print(s.lift1.available)    
 # test part end
