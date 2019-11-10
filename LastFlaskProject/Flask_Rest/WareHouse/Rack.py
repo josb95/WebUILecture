@@ -10,17 +10,22 @@ class Rack :
         self.isFull = False
         self.hasTimeStamp = False
 
-    def put(self):
+    def put(self, stuff):
         if self.quantity >= max:
             self.quantity = self.quantity + 1
             if self.quantity == max:
                 self.isFull = True
+        elif self.quantity == 0:
+            self.stuff = stuff
 
     def get(self):
         if self.quantity != 0:
             self.quantity = self.quantity - 1
-        if self.quantity == 0:
-            write_TimeStamp()
+            if self.quantity == 0:
+                self.stuff = 'None'
+                write_TimeStamp()
+        elif self.quantity == 0:
+            print("Wrong Access")
 
     def write_TimeStamp(self):
         # 물건 수량이 0이 될 때 타임스탬프를 기록하는 함수
