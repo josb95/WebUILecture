@@ -26,6 +26,7 @@ class Storage:
         
     def write_TimeStamp(self):
         # 물건 수량이 0이 될 때 타임스탬프를 기록하는 함수
+        
         pass
 
     def update_TimeStamp(self):
@@ -50,6 +51,10 @@ class Storage:
     
     def send_NextNode(self):
         # 다음 노드 전송
+        pass
+    
+    def send_StuffStatus(self):
+        # 물건 정보 전송
         pass
     
     def init_graph(self):
