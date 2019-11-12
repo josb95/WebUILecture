@@ -6,31 +6,71 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-    #test {
-        width: 540px;
-        height: 230px;
-    }
-    #divtest {
-        width: 250px;
-        height: 150px;
-        border: 1px solid;
-    }
+        #canvas{
+            width: 1860px;
+            height: 930px;
+            padding: 10px;
+            border: 3px solid #000;
+            margin-top: 0.05px;
+        }
+
+        #table{
+            width: 1850px;
+            height: 920px;
+            margin: 5px;
+        }
+
+        #map {
+            margin: 10px;
+            width: 800px;
+            height: 330px;
+            border: 1px solid #000;
+        }
+
+        #stock_setting {
+            margin: 10px;
+            width: 100px;
+            height: 330px;
+            border: 1px solid #000;
+        }
+
+
+        #margin {
+            margin: 10px;
+        }
     </style>
 </head>
 <body>
-    <table id="test" border="0">
-        <tr>
-            <td>
-                <h2>지게차 별 상태표시</h2>
-                <div id="divtest"></div>
+    <div id="canvas">
+        <table id="table" border=1>
+            <tr height=50%>
+                <td width=45%>
+                    <h2 id="margin">관리자 page</h2>
+                    <br>
+                    <h3 id="margin">실시간 상황 </h3>
+                    <div id="map" border=1></div>
+                </td>
+                <td colspan="2"></td>
+                <td></td>
+            </tr>
+            <tr height=15%>
+                <td></td>
+                <td colspan="3" rowspan="2">
+                    <h3>입고 수량 설정</h3>
+                    <div id="stock_setting" border=1></div>
 
-            </td>
-            <td>
-                <h2>타임스탬프 로그 표시</h2>
-                <div id="divtest"></div>
-            </td>
-        </tr>
-    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h3></h3>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+
 
 
 </body>

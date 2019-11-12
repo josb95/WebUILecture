@@ -31,30 +31,37 @@ class Storage:
 
     def update_TimeStamp(self):
         # 일정 주기로 혹은 특정 조건으로 임시로 늘려놓은 물건 수량을 원래대로 되돌려놓는 함수
+        
         pass
         
     def received(self):
         # 입고
+        
         pass
     
     def requisition(self):
         # 출고
+        
         pass
     
     def bad(self):
         # 불량
+        
         pass
     
     def calculate_Route(self):      
         # 경로계산
+        
         pass
     
     def send_NextNode(self):
         # 다음 노드 전송
+        
         pass
     
     def send_StuffStatus(self):
         # 물건 정보 전송
+        
         pass
     
     def init_graph(self):
