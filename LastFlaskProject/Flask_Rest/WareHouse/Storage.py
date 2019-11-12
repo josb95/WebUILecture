@@ -24,6 +24,10 @@ class Storage:
     def add_Lift(self, liftname, y):
         setattr(self, liftname, L.Lift(y))
         
+    def add_Stock(self):
+        # Stock을 추가하는 함수
+        pass
+        
     def write_TimeStamp(self):
         # 물건 수량이 0이 될 때 타임스탬프를 기록하는 함수
         
