@@ -28,5 +28,3 @@ class Rack :
                 self.stuff = 'None'
         elif self.quantity == 0:
             print("Wrong Access")
-
-    
