@@ -1,7 +1,9 @@
 import numpy as np
+import time as t
 import networkx as nx
 import Rack as R
 import Lift as L
+import Stock as S
 
 
 
@@ -22,12 +24,22 @@ class Storage:
         
         
     def add_Lift(self, liftname, y):
+        # Lift를 추가하는 함수
         setattr(self, liftname, L.Lift(y))
         
-    def add_Stock(self):
-        # Stock을 추가하는 함수
-        pass
+    def remove_Lift(self, liftname):
+        # Lift 인스턴스 삭제
+        self.liftname.kill()
         
+    def add_Stock(self, stockname, name, stock):
+        # Stock을 추가하는 함수
+        # stuffname - 인스턴스 이름, name - 물건이름, stock - 물건 수
+        setattr(self, stockname, S.Stock(name, stock))
+        
+    def remove_Stock(self, stockname):
+        # Stock 인스턴스 삭제
+        self.stockname.kill()
+    
     def write_TimeStamp(self):
         # 물건 수량이 0이 될 때 타임스탬프를 기록하는 함수
         
@@ -92,5 +104,5 @@ s = Storage(9,5)
 s.add_Lift('lift1', 0)
 print(s.lift1.x)
 print(s.lift1.y)
-print(s.lift1.available)    
+print(s.lift1.available)
 # test part end
