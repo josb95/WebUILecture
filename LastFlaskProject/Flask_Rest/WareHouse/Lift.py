@@ -69,5 +69,5 @@ class Lift:
             return
         self.lift = self.lift - 1
         
-    def kill(self):
-        del self
+    # def kill(self):
+    #     del self

@@ -15,5 +15,5 @@ class Stock:
     def set(self, quantity):
         self.quantity = quantity
         
-    def kill(self):
-        del self
+    # def kill(self):
+    #     del self

@@ -1,5 +1,6 @@
 from flask import Flask, render_template, jsonify
 import time
+import cx_Oracle as ora
 import WareHouse.Storage as WS
 
 
@@ -24,6 +25,7 @@ def admin():
 @app.route('/run') # 이 URI는 무한루프기 때문에 창고관리를 실행할때만 접속
 def run():
     # DB에서 정보 가져오기 시작
+    
     # DB에서 정보 가져오기 끝
     s = WS.Storage(9, 5)
     while True:
