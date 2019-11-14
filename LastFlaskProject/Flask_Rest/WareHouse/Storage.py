@@ -6,8 +6,6 @@ import Lift as L
 import Stock as S
 
 
-
-
 class Storage:
     def __init__(self, row, col):
         self.row = row
@@ -24,20 +22,27 @@ class Storage:
         self.rack8 = R.Rack('H', 'None', 0, 3, 6)
         self.lift_list = list()
 
-    
+    # s = Storage(9, 5)
+    # s.add_Lift('lift1', 0)
+    # s.lift1 = L.Lift(0)
 
     def add_Lift(self, liftname, y):
         # Lift를 추가하는 함수
         setattr(self, liftname, L.Lift(y))
-        append_lift(liftname)
+        self.lift_list.append(getattr(self, liftname))
+        print("Lift name : "+liftname+" added")
+
+        # self.append_lift(liftname)
         # self.lift_list.append(self.liftname)
-        
-    def append_lift(self, liftname):
-        self.lift_list.append(self.liftname)
+
+    # def append_lift(self, liftname):
+    #     self.lift_list.append(self.liftname)
 
     def remove_Lift(self, liftname):
         # Lift 인스턴스 삭제
-        self.liftname.kill()
+        temp = getattr(self, liftname)
+        temp.kill()
+        print("Lift name : "+liftname+" has removed")
 
     def add_Stock(self, stockname, name, stock):
         # Stock을 추가하는 함수
@@ -65,7 +70,6 @@ class Storage:
     def select_Lift(self):
         # 리프트 선택 (나를 물건에서 가장 가까운)
         pass
-
 
     def calculate_Route(self):
         # 경로계산
@@ -136,6 +140,18 @@ print(s.map[1][0])
 # test map end
 
 # list append test start
+s.add_Lift('lift2', 1)
+print(s.lift2.x)
+print(s.lift2.y)
+print(s.lift2.available)
 print(s.lift_list)
+s.remove_Lift('lift1')
+print(s.lift1)
+print(s.lift_list[0])
+s.lift1.kill()
+print(s.lift1)
+print(s.lift_list[0])
+del s.lift1
+print(s.lift1)
+print(s.lift_list[0])
 # list append test start
-
