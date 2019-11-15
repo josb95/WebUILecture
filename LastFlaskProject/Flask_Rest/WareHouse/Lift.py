@@ -68,6 +68,3 @@ class Lift:
         if self.lift == 0:
             return
         self.lift = self.lift - 1
-        
-    # def kill(self):
-    #     del self

@@ -1,9 +1,17 @@
 import numpy as np
 import time as t
 import networkx as nx
+# 외부 실행용
 import WareHouse.Rack as R
 import WareHouse.Lift as L
 import WareHouse.Stock as Sto
+
+# 내부 실행용
+# import Rack as R
+# import Lift as L
+# import Stock as Sto
+
+counter_list = list()
 
 
 class Storage:
@@ -15,16 +23,15 @@ class Storage:
         self.lift_list = list()
         self.stock_list = list()
         self.rack_list = list()
-        self.stuff_name_list_all = set() # 수량 계산 함수에 의해 list로 바뀜
-        
+        self.stuff_name_list_all = set()  # 수량 계산 함수에 의해 list로 바뀜
+        self.stock_dict = dict()
+
     # 인스턴스 추가, 제거 함수 =================================================
-    
+
     def add_rack(self, rackname, stuffname, stock, col, row):
         # Rack을 추가하는 함수 - 제거 불필요
         setattr(self, rackname, R.Rack(rackname, stuffname, stock, col, row))
         self.rack_list.append(getattr(self, rackname))
-
-
 
     def add_Lift(self, liftname, y):
         # Lift를 추가하는 함수
@@ -34,11 +41,10 @@ class Storage:
 
     def remove_Lift(self, liftname):
         # Lift 인스턴스 삭제 (객체 소멸자 사용 + list.remove())
-        self.lift_list.remove(getattr(self, liftname)) # lift_list list에서 해당 객체 삭제
-        delattr(self, liftname) # 객체 소멸
+        # lift_list list에서 해당 객체 삭제
+        self.lift_list.remove(getattr(self, liftname))
+        delattr(self, liftname)  # 객체 소멸
         print("Lift name : " + liftname + " has removed")
-
-
 
     def add_Stock(self, stockname, name, stock):
         # Stock을 추가하는 함수
@@ -49,28 +55,35 @@ class Storage:
 
     def remove_Stock(self, stockname):
         # Stock 인스턴스 삭제
-        self.stock_list.remove(getattr(self, stockname)) # stock_list list에서 해당 객체 삭제
-        delattr(self, stockname) # 객체 소멸
+        # stock_list list에서 해당 객체 삭제
+        self.stock_list.remove(getattr(self, stockname))
+        delattr(self, stockname)  # 객체 소멸
         print("Stock name : " + stockname + " has removed")
-        
 
     # =========================================================================
-    
+
     def calculate_Stock(self):
         # 재고 수량 계산
-        cnta, cntb, cntc, cntd, cnte, cntf, cntg, cnth = 0
-        for i in rack_list:
+        counter_list = [0, 0, 0, 0, 0, 0, 0, 0]
+        for i in self.rack_list:
             for j in i.stuff_name_list:
                 self.stuff_name_list_all.add(j)
-        
+
         # Set을 정렬 후 List 화
         self.stuff_name_list_all = sorted(self.stuff_name_list_all)
-        
-        for i in rack_list:
+
+        for i in self.rack_list:
             for j in i.stuff_list:
-                
-                pass
-            
+                for k in range(len(self.stuff_name_list_all)):
+                    if j.name == self.stuff_name_list_all[k]:
+                        counter_list[k] = counter_list[k] + 1
+
+        self.stock_dict = dict(zip(self.stuff_name_list_all, counter_list))
+
+    def initializing_Stock(self):
+        pass
+
+    def update_Stock(self):
         pass
 
     def received(self):
@@ -141,31 +154,6 @@ class Storage:
         print(self.map)
 
 
-
-# # test part start
+# test part start
 # s = Storage(9, 5)
-
-# # test map startd
-# s.show()
-# print(s.map[0][0])
-# print(s.map[1][0])
-# # test map end
-
-# # list append test start
-# s.add_Lift('lift1', 0)
-# print(s.lift1.x)
-# print(s.lift1.y)
-# print(s.lift1.available)
-# s.add_Lift('lift2', 1)
-# print(s.lift2.x)
-# print(s.lift2.y)
-# print(s.lift2.available)
-# print(s.lift_list)
-# s.remove_Lift('lift1')
-# print(s.lift_list)
-# # print(s.lift1)
-# # print(s.lift_list[0])
-# # print(s.lift_list[1])
-# # list append test start
-
-# # test part end
+# s.Rack_A
