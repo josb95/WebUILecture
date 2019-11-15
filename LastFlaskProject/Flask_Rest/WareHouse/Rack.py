@@ -2,7 +2,7 @@ import WareHouse.Stuff as Stu
 # import Stuff as Stu
 import random as ran
 max = 2
-ratio_bad = 99
+ratio_good = 60
 
 
 class Rack:
@@ -56,15 +56,18 @@ class Rack:
     
                     rand = ran.randint(1, 100)
 
-                    if rand > ratio_bad:
-                        rand_b = False
-                    else:
+                    if rand > ratio_good:
                         rand_b = True
+                    else:
+                        rand_b = False
 
                     self.stuff_name_list.append(stuffname)
                     setattr(self, id, Stu.Stuff(id, stuffname, rand_b))
                     self.stuff_list.append(getattr(self, id))
                     # 외부에서 사용할 때 id에 대한 자동 증가 카운터 필요
+                    if rand_b:
+                        print("물건 '{}'에 불량 발생".format(stuffname))
+
                     self.check_Quantity(self)
                 else:
                     print("선반이 꽉찼습니다.")
@@ -73,20 +76,33 @@ class Rack:
 
                 rand = ran.randint(1, 100)
 
-                if rand > ratio_bad:
-                    rand_b = False
-                else:
+                if rand > ratio_good:
                     rand_b = True
+                else:
+                    rand_b = False
                 self.stuff = stuffname
                 self.stuff_name_list.append(stuffname)
                 setattr(self, id, Stu.Stuff(id, stuffname, rand_b))
                 self.stuff_list.append(getattr(self, id))
                 # 외부에서 사용할 때 id에 대한 자동 증가 카운터 필요
+                if rand_b:
+                    print("물건 '{}'에 불량 발생".format(stuffname))
+                        
                 self.check_Quantity(self)
             else:
                 print("선반이 꽉찼습니다.")
         
-
+        
+        
+    # name을 받고 해당 name과 일치하는 id를 for문을 돌려 찾기
+    # for문을 돌려서 객체를 찾은 후 삭제하고 for문 break
+    
+    def remove_Stuff_byName(self, name):
+        for i in self.stuff_list:
+            if i.name == name:
+                self.remove_Stuff(i.id)
+            break
+    
     def remove_Stuff(self, id):
         if self.check_Quantity(1):
             self.stuff_name_list.remove(getattr(self, id).name)
@@ -98,3 +114,5 @@ class Rack:
                 self.stuff = 'None'
         else:
             print("선반이 비어있습니다.")
+            
+    
