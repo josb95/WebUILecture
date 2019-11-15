@@ -17,30 +17,6 @@ class Rack:
         self.stuff_list = list()
         self.stuff_name_list = list()
 
-    # 정략적 put, get 삭제 => 수량 계산은 list를 len으로 확인
-
-    def put(self, stuff):
-        # 정량적 put
-        if self.quantity >= max:
-            if self.quantity == 0:
-                self.stuff = stuff
-            self.quantity = self.quantity + 1
-            if self.quantity == max:
-                self.isFull = True
-        elif self.isFull == True:
-            print("Wrong Access")
-
-    def get(self):
-        # 정량적 get
-        if self.quantity != 0:
-            self.quantity = self.quantity - 1
-            if self.quantity == 0:
-                self.stuff = 'None'
-        elif self.quantity == 0:
-            print("Wrong Access")
-    # =============================================================
-
-    # 2안 =>
 
     def check_Quantity(self):
         # len 함수로 list 내 개수 확인
