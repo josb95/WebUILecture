@@ -80,11 +80,14 @@ class Storage:
 
         self.stock_dict = dict(zip(self.stuff_name_list_all, counter_list))
 
-    def initializing_Stock(self):
-        pass
-
-    def update_Stock(self):
-        pass
+    def update_Stock(self, stockname):
+        del self.stock_list
+        self.stock_list = list()
+        
+        for i in self.stock_dict:
+            key = i
+            value = stock_dict[key]
+            self.add_Stock(stockname, key, value)
 
     def received(self):
         # 입고

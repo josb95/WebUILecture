@@ -13,7 +13,7 @@ class Stock:
             self.quantity = quantity - 1
         else:
             print("Wrong Access")
-    
+    # =====================================================================
     def set(self, quantity):
         self.quantity = quantity
         

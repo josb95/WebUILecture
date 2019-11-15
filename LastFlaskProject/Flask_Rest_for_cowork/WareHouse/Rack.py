@@ -13,7 +13,6 @@ class Rack:
         self.col = col
         self.row = row
         self.isFull = False
-        self.hasTimeStamp = False
         self.stuff_list = list()
         self.stuff_name_list = list()
 

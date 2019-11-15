@@ -44,4 +44,7 @@ s.Rack_E.add_Stuff('8', 'cbc')
 # print(s.Rack_A.quantity)
 s.calculate_Stock()
 print(s.stock_dict)
+for i in s.stock_dict:
+    key = i
+    value = s.stock_dict[i]
 

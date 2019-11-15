@@ -1,7 +1,9 @@
 class Stock:
-    def __init__(self, name, stock):
+    def __init__(self, name, quantity):
         self.name = name
         self.quantity = quantity
+    
+    # 정량적 add minus 삭제
     
     def add(self):
         self.quantity = quantity + 1
@@ -11,9 +13,10 @@ class Stock:
             self.quantity = quantity - 1
         else:
             print("Wrong Access")
-    
+    # =====================================================================
     def set(self, quantity):
         self.quantity = quantity
         
-    # def kill(self):
-    #     del self
+    def set(self, name, quantity):
+        self.name = name
+        self.quantity = quantity
