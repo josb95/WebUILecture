@@ -4,7 +4,6 @@ import networkx as nx
 import WareHouse.Rack as R
 import WareHouse.Lift as L
 import WareHouse.Stock as Sto
-import WareHouse.Stuff as Stu
 
 
 class Storage:
@@ -16,42 +15,29 @@ class Storage:
         self.lift_list = list()
         self.stock_list = list()
         self.rack_list = list()
-        self.stuff_list = list()
+        self.stuff_name_list_all = set() # 수량 계산 함수에 의해 list로 바뀜
         
-        # self.g   = nx.grid_2d_graph(row,col)
-        
+    # 인스턴스 추가, 제거 함수 =================================================
+    
     def add_rack(self, rackname, stuffname, stock, col, row):
+        # Rack을 추가하는 함수 - 제거 불필요
         setattr(self, rackname, R.Rack(rackname, stuffname, stock, col, row))
         self.rack_list.append(getattr(self, rackname))
-        
-        # rack1 = R.Rack('A', 'None', 0, 1, 2)
-        # rack2 = R.Rack('B', 'None', 0, 1, 3)
-        # rack3 = R.Rack('C', 'None', 0, 1, 5)
-        # rack4 = R.Rack('D', 'None', 0, 1, 6)
-        # rack5 = R.Rack('E', 'None', 0, 3, 2)
-        # rack6 = R.Rack('F', 'None', 0, 3, 3)
-        # rack7 = R.Rack('G', 'None', 0, 3, 5)
-        # rack8 = R.Rack('H', 'None', 0, 3, 6)
-        
-        
-    # 설명용 코드 필드 시작
-    # s = Storage(9, 5)
-    # s.add_Lift('lift1', 0)
-    # s.lift1 = L.Lift(0)
-    # 설명용 코드 필드 끝
+
 
 
     def add_Lift(self, liftname, y):
         # Lift를 추가하는 함수
         setattr(self, liftname, L.Lift(y))
         self.lift_list.append(getattr(self, liftname))
-        print("Lift name : "+liftname+" added")
+        print("Lift name : " + liftname + " added")
 
     def remove_Lift(self, liftname):
         # Lift 인스턴스 삭제 (객체 소멸자 사용 + list.remove())
         self.lift_list.remove(getattr(self, liftname)) # lift_list list에서 해당 객체 삭제
         delattr(self, liftname) # 객체 소멸
-        print("Lift name : "+liftname+" has removed")
+        print("Lift name : " + liftname + " has removed")
+
 
 
     def add_Stock(self, stockname, name, stock):
@@ -66,7 +52,26 @@ class Storage:
         self.stock_list.remove(getattr(self, stockname)) # stock_list list에서 해당 객체 삭제
         delattr(self, stockname) # 객체 소멸
         print("Stock name : " + stockname + " has removed")
+        
 
+    # =========================================================================
+    
+    def calculate_Stock(self):
+        # 재고 수량 계산
+        cnta, cntb, cntc, cntd, cnte, cntf, cntg, cnth = 0
+        for i in rack_list:
+            for j in i.stuff_name_list:
+                self.stuff_name_list_all.add(j)
+        
+        # Set을 정렬 후 List 화
+        self.stuff_name_list_all = sorted(self.stuff_name_list_all)
+        
+        for i in rack_list:
+            for j in i.stuff_list:
+                
+                pass
+            
+        pass
 
     def received(self):
         # 입고
