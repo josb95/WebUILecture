@@ -2,7 +2,7 @@ import WareHouse.Stuff as Stu
 # import Stuff as Stu
 import random as ran
 max = 2
-ratio_good = 60
+ratio_good = 80
 
 
 class Rack:
