@@ -12,6 +12,7 @@ import WareHouse.Stock as Sto
 # import Stock as Sto
 
 counter_list = list()
+stockname_list = list()
 
 
 class Storage:
@@ -80,14 +81,16 @@ class Storage:
 
         self.stock_dict = dict(zip(self.stuff_name_list_all, counter_list))
 
-    def update_Stock(self, stockname):
+    def update_Stock(self):
         del self.stock_list
         self.stock_list = list()
-        
+        stockname_list = ['Stock_A', 'Stock_B', 'Stock_C', 'Stock_D', 'Stock_E', 'Stock_F', 'Stock_G', 'Stock_H']
+        cnt = 0
         for i in self.stock_dict:
             key = i
-            value = stock_dict[key]
-            self.add_Stock(stockname, key, value)
+            value = self.stock_dict[key]
+            self.add_Stock(stockname_list[cnt], key, value)
+            cnt = cnt + 1
 
     def received(self):
         # 입고
