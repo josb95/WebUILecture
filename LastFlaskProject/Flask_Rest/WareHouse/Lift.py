@@ -3,7 +3,7 @@ class Lift:
         self.available = True
         self.x = 0
         self.y = y
-        self.lift = 0
+        self.lift_height = 0
         self.ps = "Empty"
         self.dir = "E"
 
@@ -21,23 +21,23 @@ class Lift:
 
     def move_Forward(self):
         if self.dir == 'N':
-            move_North()
+            self.move_North()
         elif self.dir == 'W':
-            move_West()
+            self.move_West()
         elif self.dir == 'S':
-            move_South()
+            self.move_South()
         elif self.dir == 'E':
-            move_East()
+            self.move_East()
 
     def move_Backward(self):
         if self.dir == 'N':
-            move_South()
+            self.move_South()
         elif self.dir == 'W':
-            move_East()
+            self.move_East()
         elif self.dir == 'S':
-            move_North()
+            self.move_North()
         elif self.dir == 'E':
-            move_West()
+            self.move_West()
 
     def turn_Left(self):
         if self.dir == 'N':
@@ -60,11 +60,14 @@ class Lift:
             self.dir = 'N'
 
     def lift_Up(self):
-        if self.lift == 2:
+        if self.lift_height == 2:
             return
-        self.lift = self.lift + 1
+        self.lift_height = self.lift_height + 1
 
     def lift_Down(self):
-        if self.lift == 0:
+        if self.lift_height == 0:
             return
-        self.lift = self.lift - 1
+        self.lift_height = self.lift_height - 1
+        
+    def pick_Stuff(self, stuffname):
+        self.ps = stuffname

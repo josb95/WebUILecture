@@ -69,3 +69,19 @@ s.update_Stock()
 # print(s.Rack_C.stuff_list[1].isBad)
 # print(s.Rack_E.stuff_list[0].isBad)
 # print(s.Rack_E.stuff_list[1].isBad)
+
+
+# Stock Setting 테스트
+s.insert_Setting_Stock('abc', 2)
+s.insert_Setting_Stock('bbc', 2)
+s.insert_Setting_Stock('cbc', 2)
+
+print(s.stock_setting_dict)
+
+s.update_Setting_Stock('abc', 3)
+
+print(s.stock_setting_dict)
+
+s.delete_Setting_Stock('bbc')
+
+print(s.stock_setting_dict)

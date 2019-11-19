@@ -5,10 +5,6 @@
 # print(a)
 
 
-
-
-
-
 # counter_list = list()
 
 # counter_list.append('abc')
@@ -23,10 +19,20 @@
 #     print("정의되지 않은 변수가 호출되었습니다.")
 
 
-test_dict = {'abc': 3, 'bbc': 2, 'cbc': 2}
+# test_dict = {'abc': 3, 'bbc': 2, 'cbc': 2}
+# print(test_dict)
+# print(test_dict['abc'])
+# for i in test_dict:
+#     key = i
+#     value = test_dict[i]
+#     print("key : {}, value : {}".format(key, value) )
+
+
+test_dict = dict()
+
+test_dict['abc'] = 3
+test_dict['abc'] = 2
+test_dict['abd'] = 2
+del test_dict['abc']
+
 print(test_dict)
-print(test_dict['abc'])
-for i in test_dict:
-    key = i
-    value = test_dict[i]
-    print("key : {}, value : {}".format(key, value) )

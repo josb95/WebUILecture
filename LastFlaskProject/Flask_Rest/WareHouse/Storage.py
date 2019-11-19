@@ -13,7 +13,7 @@ import WareHouse.Stock as Sto
 
 counter_list = list()
 stockname_list = list()
-
+    
 
 class Storage:
     def __init__(self, row, col):
@@ -26,6 +26,7 @@ class Storage:
         self.rack_list = list()
         self.stuff_name_list_all = set()  # 수량 계산 함수에 의해 list로 바뀜
         self.stock_dict = dict()
+        self.stock_setting_dict = dict()
 
     # 인스턴스 추가, 제거 함수 =================================================
 
@@ -84,13 +85,27 @@ class Storage:
     def update_Stock(self):
         del self.stock_list
         self.stock_list = list()
-        stockname_list = ['Stock_A', 'Stock_B', 'Stock_C', 'Stock_D', 'Stock_E', 'Stock_F', 'Stock_G', 'Stock_H']
+        stockname_list = ['Stock_A', 'Stock_B', 'Stock_C',
+                          'Stock_D', 'Stock_E', 'Stock_F', 'Stock_G', 'Stock_H']
         cnt = 0
         for i in self.stock_dict:
             key = i
             value = self.stock_dict[key]
             self.add_Stock(stockname_list[cnt], key, value)
             cnt = cnt + 1
+
+    # =========================================================================
+
+    def insert_Setting_Stock(self, key, value):
+        self.stock_setting_dict[key] = int(value)
+        
+    def update_Setting_Stock(self, key, value):
+        self.stock_setting_dict[key] = int(value)
+        
+    def delete_Setting_Stock(self, key):
+        del self.stock_setting_dict[key]
+
+    # =========================================================================
 
     def received(self):
         # 입고
@@ -107,54 +122,41 @@ class Storage:
         # => 물건 하나하나 모두 객체화 예정
         pass
 
-    def select_Lift(self):
-        # (옮길 물건에서 가장 가까운) 리프트 선택
-        pass
 
-    def calculate_Route(self):
-        # 경로계산
 
-        pass
 
-    def send_NextNode(self):
-        # 다음 노드 전송
 
-        pass
 
-    def send_StuffStatus(self):
-        # 물건 정보 전송
 
-        pass
+
+
 
     def write_TimeStamp(self):
         # 물건 수량이 0이 될 때 타임스탬프를 기록하는 함수
 
         pass
 
-    def update_TimeStamp(self):
-        # 일정 주기로 혹은 특정 조건으로 임시로 늘려놓은 물건 수량을 원래대로 되돌려놓는 함수
 
-        pass
 
-    def from_StrtoTimestamp(self):
-        # Str -> Timestamp 형 변환
+    # 보류 기능 시작 =============================================================
 
-        pass
+    # def update_TimeStamp(self):
+    #     # 일정 주기로 혹은 특정 조건으로 임시로 늘려놓은 물건 수량을 원래대로 되돌려놓는 함수
 
-    def from_TimestamptoStr(self):
-        # Timestamp -> Str 형 변환
+    #     pass
 
-        pass
+    # def from_StrtoTimestamp(self):
+    #     # Str -> Timestamp 형 변환
 
-    def init_graph(self):
+    #     pass
 
-      #  self.g.add_node(1);
-      #  self.g.add_node(2);
-      #  self.g.add_node(3);
-      #  self.g.add_nodes_from( [1,2,3,4,5,6] )
-      #  for i in range(1,6):
-      #      self.g.add_edge(i, i+1)
-        pass
+    # def from_TimestamptoStr(self):
+    #     # Timestamp -> Str 형 변환
+
+    #     pass
+    
+    # 보류 기능 끝 =============================================================
+
 
     def show(self):
         print(self.map)
